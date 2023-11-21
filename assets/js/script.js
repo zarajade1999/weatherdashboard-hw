@@ -30,7 +30,7 @@ var createWeatherCard = (cityName, weatherItem, index) => {
     }
 } 
 var getWeatherInfo = (cityName, lat, lon) => {
-    var weatherCodeApi = `http://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    var weatherCodeApi = `https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${apiKey}`;
    fetch(weatherCodeApi) //fetching the api link itself
     .then(function (response) { 
         return response.json(); //returning the response to an object so its easier to read
@@ -61,7 +61,7 @@ var getCityDetails = (event) => {
     var cityName = cityInput.value.trim() //trim removes whitespace between characters
     if(!cityName) return; //! is a shorthand for NOT, this will return if the variable cityName is empty
 
-    var geocodeApi=`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+    var geocodeApi=`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
 
     // This will retrieve inputted city coordinates eg latitude, longitude and name from api
     fetch(geocodeApi)
